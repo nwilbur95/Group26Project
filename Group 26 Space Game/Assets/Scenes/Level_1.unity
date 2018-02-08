@@ -144,7 +144,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69c10a6796d1cdd4aa758c71cf4c16fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
+  health: 2
+  invulnPeriod: 0
 --- !u!61 &153578764
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -278,6 +279,7 @@ GameObject:
   - component: {fileID: 426743987}
   - component: {fileID: 426743986}
   - component: {fileID: 426743985}
+  - component: {fileID: 426743990}
   m_Layer: 0
   m_Name: Badass spaceship
   m_TagString: Untagged
@@ -341,7 +343,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69c10a6796d1cdd4aa758c71cf4c16fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
+  health: 3
+  invulnPeriod: 0
 --- !u!212 &426743988
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -399,6 +402,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &426743990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 426743984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cae30c8b670feb419c2932fade7671b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &434282178
 GameObject:
   m_ObjectHideFlags: 0
@@ -538,7 +552,7 @@ Transform:
   m_LocalScale: {x: 2.8216832, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &434282184
 MonoBehaviour:
@@ -552,6 +566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  invulnPeriod: 0
 --- !u!1 &612473836
 GameObject:
   m_ObjectHideFlags: 0
@@ -698,6 +713,34 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1 &797659998
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 797659999}
+  m_Layer: 0
+  m_Name: Weapons
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &797659999
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 797659998}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.66, y: -0.04, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1012639531 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 147846, guid: e2a563409f05b26429e07cb45c0d2ea2, type: 2}
@@ -775,7 +818,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69c10a6796d1cdd4aa758c71cf4c16fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 2
+  health: 5
+  invulnPeriod: 1
+--- !u!114 &1012639539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1012639531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eccfa2a2836c4341adc98ff9a37c688, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 1718882683992496, guid: 2cb15855c52c1484f8cc4240757b063d,
+    type: 2}
+  fireDelay: 0.4
+  bulletOffset: {x: 0, y: -1, z: 0}
 --- !u!1 &1143691928
 GameObject:
   m_ObjectHideFlags: 0
@@ -848,7 +907,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 420902, guid: e2a563409f05b26429e07cb45c0d2ea2, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 420902, guid: e2a563409f05b26429e07cb45c0d2ea2, type: 2}
       propertyPath: m_LocalScale.y
