@@ -7,7 +7,8 @@ public class PlayerMovement : MonoBehaviour {
     public float maxSpeed = 3f;
     public float rotationSpeed = 180f;
 
-    float ship_boundary_Radius = .5f;
+    //below is for camera things commented out
+    //float ship_boundary_Radius = .5f;
 
 	// Use this for initialization
 	void Start () {
