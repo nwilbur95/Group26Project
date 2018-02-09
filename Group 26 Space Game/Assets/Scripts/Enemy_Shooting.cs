@@ -17,8 +17,7 @@ public class Enemy_Shooting : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-     bulletLayer = gameObject.layer;
-
+        bulletLayer = gameObject.layer;
     }
 
     // Update is called once per frame
