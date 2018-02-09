@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Badass_SpaceShip_Rotate : MonoBehaviour {
+public class Spinner_SpaceShip_Rotate : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
