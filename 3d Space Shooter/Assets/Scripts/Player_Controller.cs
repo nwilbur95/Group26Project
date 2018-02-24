@@ -19,13 +19,16 @@ public class Player_Controller : MonoBehaviour {
     // Use this for initialization
     void Update()
     {
-        if (Input.GetButton("Fire1") && Time.time > nextFire)
-        {
-
-            nextFire = Time.time + fireRate;
-            //creates the shot at the shotspawn
-            Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
-        }
+		//Prevents shot from fireing while game is paused
+		if (!Pause_Menu.GameIsPaused) 
+		{
+			if (Input.GetButtonDown("Fire1") && Time.time > nextFire)
+			{
+				nextFire = Time.time + fireRate;
+				//creates the shot at the shotspawn
+				Instantiate(shot, shotSpawn.position, shotSpawn.rotation);          
+			}
+		}
     }
 
     // Update is called once per frame
