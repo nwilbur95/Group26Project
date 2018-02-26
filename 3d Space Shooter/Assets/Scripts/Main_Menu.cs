@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿//This script was made following "Brackeys" Start Menu tutorial on YouTube
+//https://www.youtube.com/watch?v=zc8ac_qUXQY&ab_channel=Brackeys
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -14,8 +17,8 @@ public class Main_Menu : MonoBehaviour {
 
 	public void QuitGame()
 	{
+		Debug.Log ("Quitting game...");
 		Application.Quit ();
-		Debug.Log ("QUIT!");
 	}
 
 }
