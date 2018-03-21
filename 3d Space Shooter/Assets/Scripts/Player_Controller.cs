@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player_Controller : MonoBehaviour {
     public float maxSpeed = 3f;
@@ -10,6 +11,7 @@ public class Player_Controller : MonoBehaviour {
     public GameObject shot;
     public Transform shotSpawn;
     public float fireRate;
+	public Slider healthBar;
 
     private float nextFire;
 
@@ -58,6 +60,8 @@ public class Player_Controller : MonoBehaviour {
         pos -= rot * velocity;
 
         transform.position = pos;
+
+		healthBar.value = Destroy_By_COntact.health;
     }
 
 

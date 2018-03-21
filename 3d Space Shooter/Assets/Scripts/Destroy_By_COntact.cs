@@ -8,8 +8,7 @@ public class Destroy_By_COntact : MonoBehaviour {
 
     public GameObject explosion;
     public GameObject playerExplosion;
-    public int health = 100;
-    public Text playerHealth;
+    public static int health = 100;
 
     void OnTriggerEnter(Collider other)
     {
@@ -27,7 +26,6 @@ public class Destroy_By_COntact : MonoBehaviour {
             {
                 Destroy(gameObject);
             }
-            playerHealth.text = "Health: " + health.ToString();     //update health UI (make sure UI attached to player ship health variable)
         }
         // If contact was with player, add the unique player explosion effect, destroy object.
         if (other.tag == "Player")
