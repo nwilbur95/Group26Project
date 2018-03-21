@@ -9,14 +9,18 @@ public class Player_Controller : MonoBehaviour {
 
     //publics for the lasers
     public GameObject shot;
+	public static GameObject player;
     public Transform shotSpawn;
     public float fireRate;
 	public Slider healthBar;
+	public static int health;
 
     private float nextFire;
 
-
-   
+	void Start()
+	{
+		health = 10;
+	}
 
     // Use this for initialization
     void Update()
@@ -61,8 +65,19 @@ public class Player_Controller : MonoBehaviour {
 
         transform.position = pos;
 
-		healthBar.value = Destroy_By_COntact.health;
+		healthBar.value = health;
     }
+
+	public static void DecreaseHealth(int amount)
+	{
+		if (health <= 0) 
+		{
+			Player_Controller.player.SetActive (false);
+		}
+			
+		else
+			health -= amount;
+	}
 
 
 }
