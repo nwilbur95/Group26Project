@@ -54,6 +54,7 @@ GameObject:
   - component: {fileID: 114704391673166108}
   - component: {fileID: 54259499845755546}
   - component: {fileID: 64144180417220312}
+  - component: {fileID: 114845705692295200}
   m_Layer: 0
   m_Name: Player_Ship
   m_TagString: Player
@@ -153,11 +154,11 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1924447412616352}
   serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
+  m_Mass: 10
+  m_Drag: 5
   m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
+  m_UseGravity: 1
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -191,3 +192,18 @@ MonoBehaviour:
   shot: {fileID: 1588662006742616, guid: 80a56766935b53d4cbce2ae3969f13b7, type: 2}
   shotSpawn: {fileID: 4903405584849636}
   fireRate: 0.25
+--- !u!114 &114845705692295200
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1924447412616352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62db15c1f79f098418b1e0b03917962b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 100012, guid: 384371afbb4354cc9a3fc68eab303756, type: 2}
+  playerExplosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 2}
+  health: 10
+  playerHealth: {fileID: 0}

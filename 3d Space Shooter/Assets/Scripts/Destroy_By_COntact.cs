@@ -13,6 +13,12 @@ public class Destroy_By_COntact : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
+        //take no damage when colliding with scrap
+        if (other.tag == "scrap")
+        {
+            return;
+        }
+
         // If it was a boundry collision, just shrug and move on. 
         if (other.tag == "Boundry" || other.tag == "Enemy")
         {
