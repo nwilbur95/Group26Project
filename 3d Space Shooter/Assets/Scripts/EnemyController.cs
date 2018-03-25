@@ -10,29 +10,50 @@ public class EnemyController : MonoBehaviour
 	public float Min;
 	public float MoveSpeed;
 
+	//Shooting variables
+	public GameObject shot;
+	public Transform shotSpawn;
+	public float fireRate;
+
+	private AudioSource audioSource;
+	private float dist;
+	private float nextFire;
 
 	void Start()
 	{
-		InvokeRepeating("Update", 1, 1);
+		audioSource = GetComponent<AudioSource> ();
 	}
 
 	void Update()
 	{
-		transform.LookAt(Player);
-			if(Vector3.Distance(transform.position, Player.position) >= Min)
-			{
-				// Debug.Log(transform.forward);
-				if (transform.forward == new Vector3(0,0,0))
-				{
-					transform.forward = new Vector3(0, 0, 1);
-				}
-				transform.position += transform.forward*MoveSpeed*Time.deltaTime;
+		//Distance from player
+		dist = Vector3.Distance(Player.position, transform.position);
+		Debug.Log (dist);
+
+		if(dist <= Max)
+		{
+			transform.LookAt(Player);
 			
-				if(Vector3.Distance(transform.position, Player.position) <= Max)
-				{
-					return;
-				}
+			// Debug.Log(transform.forward);
+			if (transform.forward == new Vector3(0,0,0))
+			{
+				transform.forward = new Vector3(0, 0, 1);
+
 			}
 
+			transform.position += transform.forward*MoveSpeed*Time.deltaTime;
+
+			if (Time.time > nextFire) 
+			{
+				nextFire = Time.time + fireRate;
+				Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+				audioSource.Play();
+			}
+
+			if(dist <= Min)
+			{
+				return;
+			}							
+		}			
 	}
 }
