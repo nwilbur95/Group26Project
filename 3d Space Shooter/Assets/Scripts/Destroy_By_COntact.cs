@@ -13,8 +13,8 @@ public class Destroy_By_COntact : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        //take no damage when colliding with scrap
-        if (other.tag == "scrap")
+        //take no damage when colliding with pickup/station
+        if (other.tag == "scrap" || other.tag == "Station" || other.tag == "coin")
         {
             return;
         }

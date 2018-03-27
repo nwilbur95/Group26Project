@@ -14,9 +14,12 @@ public class Player_Controller : MonoBehaviour {
 
     private float nextFire;
 
-    //publics for scrap collecting
+    //publics for scrap/coim collecting
     public int scrap = 0;
     public Text playerScrap;
+
+    public int coin = 0;
+    public Text playerCoin;
 
     // Use this for initialization
     void Update()
@@ -62,7 +65,7 @@ public class Player_Controller : MonoBehaviour {
         transform.position = pos;
     }
 
-    //collecting scrap
+    //collecting scrap/coin
     void OnTriggerEnter(Collider other)
     {
         //take no damage when colliding with scrap
@@ -71,6 +74,21 @@ public class Player_Controller : MonoBehaviour {
             other.gameObject.SetActive(false);
             scrap++;
             playerScrap.text = "Scrap: " + scrap.ToString();     //update scrap UI (make sure UI attached to player ship scrap variable)
+        }
+
+        //take no damage when colliding with scrap
+        if (other.tag == "coin")
+        {
+            other.gameObject.SetActive(false);
+            coin++;
+            playerCoin.text = "Coin: " + coin.ToString();     //update scrap UI (make sure UI attached to player ship scrap variable)
+        }
+
+        if (other.tag == "Station")
+        {
+            GameObject storeParent = GameObject.Find("StoreUI");
+            GameObject storeUI = storeParent.transform.Find("Panel").gameObject;
+            storeUI.SetActive(true);
         }
     }
 }
