@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[System.Serializable]
 public class Player_Controller : MonoBehaviour {
     public float maxSpeed = 3f;
     public float rotationSpeed = 180f;
