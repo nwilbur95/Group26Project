@@ -23,12 +23,6 @@ public class Player_Controller : MonoBehaviour {
 		health = 10;
 	}
 
-<<<<<<< HEAD
-=======
-    //publics for scrap collecting
-    public int scrap = 0;
-    public Text playerScrap;
->>>>>>> parent of 1553975... Sprint 2
 
     // Use this for initialization
     void Update()
@@ -73,20 +67,7 @@ public class Player_Controller : MonoBehaviour {
 
         transform.position = pos;
 
-<<<<<<< HEAD
 		healthBar.value = health;
-=======
-    //collecting scrap
-    void OnTriggerEnter(Collider other)
-    {
-        //take no damage when colliding with scrap
-        if (other.tag == "scrap")
-        {
-            other.gameObject.SetActive(false);
-            scrap++;
-            playerScrap.text = "Scrap: " + scrap.ToString();     //update scrap UI (make sure UI attached to player ship scrap variable)
-        }
->>>>>>> parent of 1553975... Sprint 2
     }
 	public static void DecreaseHealth(int amount)
 	{

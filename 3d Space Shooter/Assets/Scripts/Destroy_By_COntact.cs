@@ -14,15 +14,7 @@ public class Destroy_By_COntact : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-<<<<<<< HEAD
 		int health = Player_Controller.health;
-=======
-        //take no damage when colliding with scrap
-        if (other.tag == "scrap")
-        {
-            return;
-        }
->>>>>>> parent of 1553975... Sprint 2
 
         // If it was a boundry collision, just shrug and move on. 
         if (other.tag == "Boundry" || other.tag == "Enemy")
