@@ -3,23 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[System.Serializable]
 public class Player_Controller : MonoBehaviour {
     public float maxSpeed = 3f;
     public float rotationSpeed = 180f;
 
     //publics for the lasers
     public GameObject shot;
+	public static GameObject player;
     public Transform shotSpawn;
     public float fireRate;
+	public Slider healthBar;
+	public static int health;
 
     private float nextFire;
+    
+	void Start()
+	{
+		health = 10;
+	}
 
-    //publics for scrap/coim collecting
+<<<<<<< HEAD
+=======
+    //publics for scrap collecting
     public int scrap = 0;
     public Text playerScrap;
-
-    public int coin = 0;
-    public Text playerCoin;
+>>>>>>> parent of 1553975... Sprint 2
 
     // Use this for initialization
     void Update()
@@ -63,9 +72,11 @@ public class Player_Controller : MonoBehaviour {
         pos -= rot * velocity;
 
         transform.position = pos;
-    }
 
-    //collecting scrap/coin
+<<<<<<< HEAD
+		healthBar.value = health;
+=======
+    //collecting scrap
     void OnTriggerEnter(Collider other)
     {
         //take no damage when colliding with scrap
@@ -75,20 +86,16 @@ public class Player_Controller : MonoBehaviour {
             scrap++;
             playerScrap.text = "Scrap: " + scrap.ToString();     //update scrap UI (make sure UI attached to player ship scrap variable)
         }
-
-        //take no damage when colliding with scrap
-        if (other.tag == "coin")
-        {
-            other.gameObject.SetActive(false);
-            coin++;
-            playerCoin.text = "Coin: " + coin.ToString();     //update scrap UI (make sure UI attached to player ship scrap variable)
-        }
-
-        if (other.tag == "Station")
-        {
-            GameObject storeParent = GameObject.Find("StoreUI");
-            GameObject storeUI = storeParent.transform.Find("Panel").gameObject;
-            storeUI.SetActive(true);
-        }
+>>>>>>> parent of 1553975... Sprint 2
     }
+	public static void DecreaseHealth(int amount)
+	{
+		if (health <= 0) 
+		{
+			Player_Controller.player.SetActive (false);
+		}
+			
+		else
+			health -= amount;
+	}
 }

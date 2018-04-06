@@ -7,9 +7,11 @@ TagManager:
   - Boundry
   - Enemy
   - asteroid
+<<<<<<< HEAD
+
+=======
   - scrap
-  - Station
-  - coin
+>>>>>>> parent of 1553975... Sprint 2
   layers:
   - Default
   - TransparentFX
