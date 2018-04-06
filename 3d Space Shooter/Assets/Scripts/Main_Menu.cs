@@ -11,9 +11,8 @@ public class Main_Menu : MonoBehaviour {
 	//Given that this we don't have saving implemented yet, this will just load the "Level_1" scene
 	public void StartGame ()
 	{
-        SaveData.current = new SaveData();
-        //Load the next scene in the index
-        SceneManager.LoadScene (SceneManager.GetActiveScene().buildIndex + 1);
+		//Load the next scene in the index
+		SceneManager.LoadScene (SceneManager.GetActiveScene().buildIndex + 1);
 	}
 
 	public void QuitGame()
