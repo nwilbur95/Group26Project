@@ -7,6 +7,9 @@ TagManager:
   - Boundry
   - Enemy
   - asteroid
+  - scrap
+  - Station
+  - coin
   layers:
   - Default
   - TransparentFX
