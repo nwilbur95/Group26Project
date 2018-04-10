@@ -251,8 +251,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62db15c1f79f098418b1e0b03917962b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 0}
-  playerExplosion: {fileID: 0}
+  explosion: {fileID: 100012, guid: ed0006b062d3f4f56a38af9f6f0ec266, type: 2}
+  playerExplosion: {fileID: 100012, guid: ed0006b062d3f4f56a38af9f6f0ec266, type: 2}
   myStats: {fileID: 0}
   health: 0
   playerHealth: {fileID: 0}

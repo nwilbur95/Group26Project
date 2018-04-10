@@ -21,9 +21,11 @@ public class EnemyController : MonoBehaviour
 	private float dist;
 	private float nextFire;
 	private int update;
+	// private CharacterStats enemyStats;
 
 	void Start()
 	{
+		// enemyStats = GetComponent<CharacterStats>();
 		InvokeRepeating("Update", 1, 1);
 	}
 
