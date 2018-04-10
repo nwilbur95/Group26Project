@@ -26,11 +26,11 @@ public class EnemyController : MonoBehaviour
 
 	void Start()
 	{
-		enemyStats = GetComponent<EnemyStats>();
-		fireRate = enemyStats.fireRate.getValue();
-		MoveSpeed = enemyStats.speed.getValue();
-		Max = enemyStats.engageRange.getValue();
-		InvokeRepeating("Update", 1, 1);
+//		enemyStats = GetComponent<EnemyStats>();
+//		fireRate = enemyStats.fireRate.getValue();
+//		MoveSpeed = enemyStats.speed.getValue();
+//		Max = enemyStats.engageRange.getValue();
+//		InvokeRepeating("Update", 1, 1);
 	}
 
 	void Update()

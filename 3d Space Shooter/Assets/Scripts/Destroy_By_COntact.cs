@@ -89,7 +89,7 @@ public class Destroy_By_COntact : MonoBehaviour {
 
             if (health < 0)    //object dead
             {
-                Destroy(gameObject);
+				gameObject.SetActive(false);
             }
         }
 
