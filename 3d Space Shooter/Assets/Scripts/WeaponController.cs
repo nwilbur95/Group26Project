@@ -14,6 +14,8 @@ public class WeaponController : MonoBehaviour
 	void Start()
 	{
 		audioSource = GetComponent<AudioSource>();
+		InvokeRepeating("Fire", delay, fireRate);
+
 	}
 
 	void Fire()
