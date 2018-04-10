@@ -1152,9 +1152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 058c1ae56eadb2e49b8f37e485d86f43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endMenuUI: {fileID: 783488216}
-  healthBar: {fileID: 1048878719}
-  player: {fileID: 1979243084}
 --- !u!1 &814835528
 GameObject:
   m_ObjectHideFlags: 0
@@ -2622,6 +2619,11 @@ Prefab:
       propertyPath: MoveSpeed
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 114478901876613448, guid: 276c29cba0d004e6698b8f63e6f5f1cd,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 276c29cba0d004e6698b8f63e6f5f1cd, type: 2}
   m_IsPrefabParent: 0
@@ -2687,11 +2689,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1979243084 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1653459935944850, guid: ef323ef1346344d01990994395731798,
-    type: 2}
-  m_PrefabInternal: {fileID: 494184580}
 --- !u!1 &2031790343
 GameObject:
   m_ObjectHideFlags: 0

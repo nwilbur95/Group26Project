@@ -27,7 +27,12 @@ public class CharacterStats : MonoBehaviour
 
 	public void takeDamage(int damage)
 	{
-		currentHealth -= damage - armor.getValue();
+		damage = damage - armor.getValue();
+		if (damage < 0)
+		{
+			damage = 0;
+		}
+		currentHealth -= damage;
 		// Debug.Log(transform.name + " takes " + damage + " damage.");
 
 		if(currentHealth <= 0)
@@ -37,7 +42,7 @@ public class CharacterStats : MonoBehaviour
 
 
 	}
-
+	// Not used currently.
 	public virtual void Die()
 	{
 		// Die in some way
