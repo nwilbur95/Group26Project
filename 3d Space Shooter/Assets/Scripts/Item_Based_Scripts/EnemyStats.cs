@@ -12,7 +12,7 @@ public class EnemyStats: CharacterStats{
 	void Start()
 	{
 		fireRate.addModifier(1);
-		speed.addModifier(1);
-		engageRange.addModifier(1);
+		speed.addModifier(15);
+		engageRange.addModifier(30);
 	}
 }

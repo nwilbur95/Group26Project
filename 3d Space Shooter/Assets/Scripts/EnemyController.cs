@@ -10,6 +10,7 @@ public class EnemyController : MonoBehaviour
 	public float Max;
 	public float Min;
 	public float MoveSpeed;
+	// public GameObject self;
 
 
 	//Shooting variables
@@ -21,11 +22,14 @@ public class EnemyController : MonoBehaviour
 	private float dist;
 	private float nextFire;
 	private int update;
-	// private CharacterStats enemyStats;
+	private EnemyStats enemyStats;
 
 	void Start()
 	{
-		// enemyStats = GetComponent<CharacterStats>();
+		enemyStats = GetComponent<EnemyStats>();
+		fireRate = enemyStats.fireRate.getValue();
+		MoveSpeed = enemyStats.speed.getValue();
+		Max = enemyStats.engageRange.getValue();
 		InvokeRepeating("Update", 1, 1);
 	}
 
