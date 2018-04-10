@@ -41,15 +41,19 @@ public class Destroy_By_COntact : MonoBehaviour {
             health = myStats.currentHealth;
             // Debug.Log(self.tag + " Collided with Enemy.");
 
-            if (health < 0)    //object dead
+ 
+            if(self.tag == "Player")
+            {
+                if (health < 0)    //object dead
+                {
+                    gameObject.SetActive(false);
+                }
+                playerHealth.text = "Health: " + health.ToString(); 
+            }
+            else if (health < 0)    //object dead
             {
                 Destroy(gameObject);
             }
-            if(self.tag == "Player")
-            {
-                playerHealth.text = "Health: " + health.ToString(); 
-            }
-
             return;
         }
         // Lasers have no explosion, and thus should not instantiate one. 
@@ -59,14 +63,19 @@ public class Destroy_By_COntact : MonoBehaviour {
             myStats.takeDamage(other.GetComponent<CharacterStats>().damage.getValue());
             // Debug.Log(self.tag + " Collided with Laser.");
             health = myStats.currentHealth;
-            if (health < 0)    //object dead
-            {
-                Destroy(gameObject);
-            }
+  
             //update health UI (make sure UI attached to player ship health variable)
             if(self.tag == "Player")
-            {
+            {   
+                if (health < 0)    //object dead
+                {
+                    gameObject.SetActive(false);
+                }
                 playerHealth.text = "Health: " + health.ToString(); 
+            }
+            else if (health < 0)    //object dead
+            {
+                Destroy(gameObject);
             }
 
         }
@@ -91,13 +100,18 @@ public class Destroy_By_COntact : MonoBehaviour {
             health = myStats.currentHealth;
             // Debug.Log(self.tag + " Collided with asteroid.");
 
-            if (health < 0)    //object dead
-            {
-                Destroy(gameObject);
-            }
+
             if(self.tag == "Player")
             {
+                if (health < 0)    //object dead
+                {
+                    gameObject.SetActive(false);
+                }
                 playerHealth.text = "Health: " + health.ToString(); 
+            }
+            else if (health < 0)    //object dead
+            {
+                Destroy(gameObject);
             }
 
         }
