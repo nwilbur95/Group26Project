@@ -76,6 +76,8 @@ public class Destroy_By_COntact : MonoBehaviour {
             else if (health < 0)    //object dead
             {
                 Destroy(gameObject);
+				EnemySpawner.activeEnemies--;
+				EnemySpawner.enemiesKilled++;
             }
 
         }
