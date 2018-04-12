@@ -13,6 +13,7 @@ public class EnemySpawner : MonoBehaviour {
 	private Transform[] spawnPoints;
 	private int randomSpawn;
 	private int maxEnemies;
+	public static bool addEnemies = false;
 
 	// Use this for initialization
 	void Start () 
@@ -35,6 +36,15 @@ public class EnemySpawner : MonoBehaviour {
 		spawnedShip.GetComponent<EnemyController> ().Player = playerShip.transform;
 		activeEnemies++;
 	}
+
+	public static void killEnemy()
+	{
+		enemiesKilled++;
+		activeEnemies--;
+
+		if (enemiesKilled % 10 == 0)
+			addEnemies = true;		
+	}
 		
 
 	// Update is called once per frame
@@ -42,11 +52,13 @@ public class EnemySpawner : MonoBehaviour {
 	{
 		Debug.Log (enemiesKilled);
 
-		if ((enemiesKilled % 5 == 0) && (enemiesKilled != 0))
-			maxEnemies++;
-
-		if (activeEnemies < maxEnemies) 
+		if (activeEnemies < maxEnemies)
 			spawnShip ();
 
+		if (addEnemies) {
+			maxEnemies++;
+			addEnemies = false;
+			Debug.Log ("Increased enemies");
+		}
 	}
 }
