@@ -32,6 +32,31 @@ public class Destroy_By_COntact : MonoBehaviour {
             if (health == 0)    //object dead
             {
                 Destroy(gameObject);
+
+                if(gameObject.tag == "Enemy")       //enemy drop 
+                {
+                    int choice = Random.Range(0,101);       //probability generation
+
+                    if(choice <= 30)    //just gold
+                        Instantiate(Resources.Load("goldCoins"), transform.position, Quaternion.Euler(90,0,0));
+                    else if(choice > 30 && choice <= 70)    //just scrap
+                        Instantiate(Resources.Load("Mus_2"), transform.position, transform.rotation);
+                    else if (choice > 70 && choice <= 90)   //1 gold + 2 scrap
+                    {
+                        Instantiate(Resources.Load("goldCoins"), transform.position, Quaternion.Euler(90, 0, 0));
+                        Instantiate(Resources.Load("Mus_2"), transform.position + Vector3.left *3, transform.rotation);
+                        Instantiate(Resources.Load("Mus_1"), transform.position + Vector3.right *3, transform.rotation);
+                    }
+                    else    //2 gold + 4 scrap
+                    {
+                        Instantiate(Resources.Load("goldCoins"), transform.position, Quaternion.Euler(90, 0, 0));
+                        Instantiate(Resources.Load("goldCoins"), transform.position, Quaternion.Euler(90, 0, 0));
+                        Instantiate(Resources.Load("Mus_1"), transform.position + Vector3.left *3, transform.rotation);
+                        Instantiate(Resources.Load("Mus_2"), transform.position + Vector3.right * 3, transform.rotation);
+                        Instantiate(Resources.Load("Mus_3"), transform.position + Vector3.forward *3, transform.rotation);
+                        Instantiate(Resources.Load("Mus_4"), transform.position + Vector3.back * 3, transform.rotation);
+                    }
+                }
             }
             playerHealth.text = "Health: " + health.ToString();     //update health UI (make sure UI attached to player ship health variable)
         }
