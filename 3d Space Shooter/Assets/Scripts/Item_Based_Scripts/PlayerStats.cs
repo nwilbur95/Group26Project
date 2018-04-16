@@ -5,14 +5,15 @@ using UnityEngine;
 [System.Serializable]
 
 public class PlayerStats: CharacterStats{
+
 	public Stat speed;
 	public Stat health;
+
 
 	void Start()
 	{
 		EquipmentManager.instance.onEquipmentChanged += OnEquipmentChanged;
 		speed.addModifier(20);
-
 	}
 
 	void OnEquipmentChanged ( Equipment newItem, Equipment oldItem)
