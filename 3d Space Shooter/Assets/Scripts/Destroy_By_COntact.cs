@@ -20,7 +20,7 @@ public class Destroy_By_COntact : MonoBehaviour {
         }
 
         // If it was a boundry collision, just shrug and move on. 
-        if (other.tag == "Boundry" || other.tag == "Enemy")
+        if (other.tag == "Boundry")
         {
             return;
         }
@@ -71,7 +71,18 @@ public class Destroy_By_COntact : MonoBehaviour {
             }
         }
 
-        if(other.tag == "asteroid")     //if contact hit with an asteroid, we want the asteroid to explode
+        //Player collide with the enemy ship
+        if (other.tag == "Enemy")
+        {
+            Instantiate(playerExplosion, transform.position, transform.rotation);
+            health--;
+            if (health == 0)    //object dead
+            {
+                Destroy(gameObject);
+            }
+        }
+
+        if (other.tag == "asteroid")     //if contact hit with an asteroid, we want the asteroid to explode
         {
             Destroy(other.gameObject);
         }
