@@ -11,6 +11,7 @@ public class EnemyController : MonoBehaviour
 	public float Min;
 	public float MoveSpeed;
 	// public GameObject self;
+	public Image enemyHealthBar;
 
 
 	//Shooting variables
@@ -31,6 +32,8 @@ public class EnemyController : MonoBehaviour
 		MoveSpeed = enemyStats.speed.getValue();
 		Max = enemyStats.engageRange.getValue();
 		InvokeRepeating("Update", 1, 1);
+
+		enemyHealthBar.fillAmount = (float)(GetComponent<EnemyStats>().currentHealth)/((float)(GetComponent<EnemyStats>().maxHealth.getValue()));
 	}
 
 	void Update()
