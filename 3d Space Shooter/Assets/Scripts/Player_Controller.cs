@@ -26,8 +26,6 @@ public class Player_Controller : MonoBehaviour {
     public Text playerCoin;
 	public Slider healthBar;
 	public static PlayerStats myStats;
-    public static EquipmentManager instance;
-
     private static Equipment[] equip;
 
 
@@ -74,7 +72,6 @@ public class Player_Controller : MonoBehaviour {
     {
         instance = GetComponent<EquipmentManager>();
         equip = instance.currentEquipment;        
-
         maxSpeed = myStats.speed.getValue();
 
         //grab the rotation quarternion

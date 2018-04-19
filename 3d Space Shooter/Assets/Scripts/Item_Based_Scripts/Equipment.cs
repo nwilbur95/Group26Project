@@ -14,6 +14,7 @@ public class Equipment : Item
 	public int speedModifier;
 	public Texture material;
 
+
 	public override void Use()
 	{
 		base.Use();
