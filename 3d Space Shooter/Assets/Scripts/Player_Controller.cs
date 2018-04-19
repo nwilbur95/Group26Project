@@ -22,7 +22,7 @@ public class Player_Controller : MonoBehaviour {
     public int scrap = 0;
     public Text playerScrap;
 
-    public int coin = 0;
+    public int coin = 10;
     public Text playerCoin;
 	public Slider healthBar;
 	public static PlayerStats myStats;
@@ -114,6 +114,15 @@ public class Player_Controller : MonoBehaviour {
             GameObject storeUI = storeParent.transform.Find("Panel").gameObject;
             storeUI.SetActive(true);
         }
+    }
+
+    public int getCoins()
+    {
+        return coin;
+    }
+    public void setCoins(int price)
+    {
+        coin += price;
     }
 
 
