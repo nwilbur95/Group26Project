@@ -52,16 +52,21 @@ public class Player_Controller : MonoBehaviour {
 			if (Input.GetButtonDown("Fire1") && Time.time > nextFire)
 			{
 				nextFire = Time.time + fireRate;
+                // GameObject child = shot.transform.GetChild(0).gameObject;
+
 				//creates the shot at the shotspawn
                 if(equip[2] == null)
                 {
+                    shot.GetComponent<CharacterStats>().damage = myStats.damage;
                     Instantiate(shot, shotSpawn.position, shotSpawn.rotation);          
                 }
                 else
                 {   
                     GameObject child = shot.transform.GetChild(0).gameObject;
+                    shot.GetComponent<CharacterStats>().damage = myStats.damage;
                     child.GetComponent<MeshRenderer>().sharedMaterials[0].mainTexture = equip[2].material;
-                    Instantiate(shot, shotSpawn.position, shotSpawn.rotation);          
+                    Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+                    // shot.AddComponent<PlayerStats>();
                 }
 			}
 		}
@@ -70,7 +75,7 @@ public class Player_Controller : MonoBehaviour {
     // Update is called once per frame
     void FixedUpdate()
     {
-        instance = GetComponent<EquipmentManager>();
+        EquipmentManager instance = GetComponent<EquipmentManager>();
         equip = instance.currentEquipment;        
         maxSpeed = myStats.speed.getValue();
 

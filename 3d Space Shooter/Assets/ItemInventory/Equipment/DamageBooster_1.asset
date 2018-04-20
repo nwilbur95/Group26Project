@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Name: DamageBooster_1
   m_EditorClassIdentifier: 
   name: Damage Boost 1
-  icon: {fileID: 21300000, guid: ba33ced9ef89f4f439ba2e3128cfd071, type: 3}
+  icon: {fileID: 21300000, guid: 7d3ccea546f9d454e85faf1a04c9d228, type: 3}
   isDefaultItem: 0
+  price: 0
   equipSlot: 2
   armorModifier: 0
   damageModifier: 2
   healthModifier: 0
   speedModifier: 0
+  material: {fileID: 2800000, guid: 4feb0d25c79744a79b632c57793f5fc0, type: 3}

@@ -11,7 +11,6 @@ public class EnemyController : MonoBehaviour
 	public float Min;
 	public float MoveSpeed;
 	// public GameObject self;
-	public Image enemyHealthBar;
 
 
 	//Shooting variables

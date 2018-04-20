@@ -9,13 +9,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc179900fe51b4c54ace8b264a41e521, type: 3}
-  m_Name: Missile Launcher
+  m_Name: SpeedBoost_1
   m_EditorClassIdentifier: 
   name: Dynamic Targetting System
   icon: {fileID: 21300000, guid: 7d3ccea546f9d454e85faf1a04c9d228, type: 3}
   isDefaultItem: 0
+  price: 0
   equipSlot: 2
   armorModifier: 0
   damageModifier: 5
   healthModifier: 0
   speedModifier: 0
+  material: {fileID: 0}
