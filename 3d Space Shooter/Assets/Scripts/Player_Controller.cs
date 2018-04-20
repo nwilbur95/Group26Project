@@ -26,6 +26,7 @@ public class Player_Controller : MonoBehaviour {
     public Text playerCoin;
 	public Slider healthBar;
 	public static PlayerStats myStats;
+    private static Equipment[] equip;
 
 
 
@@ -39,6 +40,7 @@ public class Player_Controller : MonoBehaviour {
     void Update()
     {
 
+
         if(EventSystem.current.IsPointerOverGameObject())
         {
             return;
@@ -51,7 +53,16 @@ public class Player_Controller : MonoBehaviour {
 			{
 				nextFire = Time.time + fireRate;
 				//creates the shot at the shotspawn
-				Instantiate(shot, shotSpawn.position, shotSpawn.rotation);          
+                if(equip[2] == null)
+                {
+                    Instantiate(shot, shotSpawn.position, shotSpawn.rotation);          
+                }
+                else
+                {   
+                    GameObject child = shot.transform.GetChild(0).gameObject;
+                    child.GetComponent<MeshRenderer>().sharedMaterials[0].mainTexture = equip[2].material;
+                    Instantiate(shot, shotSpawn.position, shotSpawn.rotation);          
+                }
 			}
 		}
     }
@@ -59,6 +70,8 @@ public class Player_Controller : MonoBehaviour {
     // Update is called once per frame
     void FixedUpdate()
     {
+        instance = GetComponent<EquipmentManager>();
+        equip = instance.currentEquipment;        
         maxSpeed = myStats.speed.getValue();
 
         //grab the rotation quarternion
