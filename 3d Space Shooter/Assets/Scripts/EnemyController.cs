@@ -35,11 +35,14 @@ public class EnemyController : MonoBehaviour
 	{
 		stats = GetComponent<CharacterStats> ();
 
+		//Debug.Log (enemyStats.Length);
+
 		//Get random build type
-		randomBuild = UnityEngine.Random.Range (0, enemyStats.Length - 1);
+		randomBuild = UnityEngine.Random.Range (0, 3);
 
 		//Assign stats based off of build
-		stats.maxHealth.addModifier(enemyStats[randomBuild, 0]);
+		Debug.Log(enemyStats[randomBuild,0]);
+		stats.SetHealth(enemyStats[randomBuild, 0] - 10);
 		stats.armor.addModifier(enemyStats[randomBuild, 1]);
 		MoveSpeed = movement [randomBuild, 0];
 		fireRate = movement [randomBuild, 1];
