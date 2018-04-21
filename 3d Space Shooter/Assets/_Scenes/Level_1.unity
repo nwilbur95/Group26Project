@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -533,14 +533,12 @@ Prefab:
         type: 2}
       propertyPath: playerCoin
       value: 
-      objectReference: {fileID: 114668803538529124, guid: e488125bde0d23e43a6bef65680484b4,
-        type: 2}
+      objectReference: {fileID: 821953203}
     - target: {fileID: 114817504029597396, guid: ef323ef1346344d01990994395731798,
         type: 2}
       propertyPath: playerScrap
       value: 
-      objectReference: {fileID: 114771904117850460, guid: 350962a69d02ce7448cf1c9009401768,
-        type: 2}
+      objectReference: {fileID: 1062027994}
     - target: {fileID: 114846107315289200, guid: ef323ef1346344d01990994395731798,
         type: 2}
       propertyPath: damage.baseValue
@@ -1438,6 +1436,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 814835528}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &821953203 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114668803538529124, guid: e488125bde0d23e43a6bef65680484b4,
+    type: 2}
+  m_PrefabInternal: {fileID: 1569746248}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!114 &859388698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1869,6 +1873,12 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1062027994 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114771904117850460, guid: 350962a69d02ce7448cf1c9009401768,
+    type: 2}
+  m_PrefabInternal: {fileID: 1025957357}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1114446814
 GameObject:
   m_ObjectHideFlags: 0
@@ -4101,7 +4111,7 @@ Prefab:
     - target: {fileID: 114668803538529124, guid: e488125bde0d23e43a6bef65680484b4,
         type: 2}
       propertyPath: m_Text
-      value: 'Coin: 1'
+      value: 'Coin: 0'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e488125bde0d23e43a6bef65680484b4, type: 2}
