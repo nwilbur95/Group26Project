@@ -37,10 +37,6 @@ public class EnemyController : MonoBehaviour
 
 	void Update()
 	{
-<<<<<<< HEAD
-
-=======
->>>>>>> 40d57c52fda15a54548dedea81d8f8f860c88e1c
 		//Distance from player
 		dist = Vector3.Distance(Player.position, transform.position);
 		// Debug.Log (dist);
