@@ -17,7 +17,7 @@ public class EquipmentManager : MonoBehaviour {
 	public delegate void OnEquipmentChanged(Equipment newItem, Equipment oldItem);
 	public OnEquipmentChanged onEquipmentChanged;
 
-	Equipment[] currentEquipment;
+	public Equipment[] currentEquipment;
 
 	void Start()
 	{

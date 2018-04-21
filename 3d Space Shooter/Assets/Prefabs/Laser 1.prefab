@@ -237,8 +237,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1cff86eab09e4cc4a8ca6841eef93049, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   speed: 80
 --- !u!114 &114261067079241126
 MonoBehaviour:
@@ -249,8 +249,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62db15c1f79f098418b1e0b03917962b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   explosion: {fileID: 100012, guid: ed0006b062d3f4f56a38af9f6f0ec266, type: 2}
   playerExplosion: {fileID: 100012, guid: ed0006b062d3f4f56a38af9f6f0ec266, type: 2}
   myStats: {fileID: 0}
@@ -266,11 +266,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 067c48674e75743f993eec67ab1a6c7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 1
+  m_Name:
+  m_EditorClassIdentifier:
+  maxHealth:
+    baseValue: 0
   damage:
-    baseValue: 4
+    baseValue: 22
   armor:
     baseValue: 1
 --- !u!136 &136943892704542752

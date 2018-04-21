@@ -12,7 +12,6 @@ public class Laser_Mover : MonoBehaviour
         GetComponent<Rigidbody>().velocity = -transform.forward * speed;
 
 
-
     }
 	
 	// Update is called once per frame

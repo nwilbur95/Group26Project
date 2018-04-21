@@ -10,6 +10,10 @@ public class Equipment : Item
 	public EquipmentSlot equipSlot;
 	public int armorModifier;
 	public int damageModifier;
+	public int healthModifier;
+	public int speedModifier;
+	public Texture material;
+
 
 	public override void Use()
 	{

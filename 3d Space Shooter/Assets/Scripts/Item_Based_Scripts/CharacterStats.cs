@@ -5,13 +5,13 @@ using UnityEngine;
 public class CharacterStats : MonoBehaviour
 {
 	public Stat maxHealth;
-	public int currentHealth{get; private set;}
+	public int currentHealth{get; set;}
 
 	public Stat damage;
 	public Stat armor;
 
 	void Awake()
-	{	
+	{
 		maxHealth.addModifier(10);
 		currentHealth = maxHealth.getValue();
 		//armor.addModifier(1);
@@ -59,7 +59,7 @@ public class CharacterStats : MonoBehaviour
 	public virtual void Die()
 	{
 		// Die in some way
-		// Meant to be overriden. 
+		// Meant to be overriden.
 		Debug.Log(transform.name + " dies.");
 	}
 }

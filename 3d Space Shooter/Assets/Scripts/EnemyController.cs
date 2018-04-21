@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System;
-using System.Collections;
 
 
 public class EnemyController : MonoBehaviour
@@ -10,6 +9,7 @@ public class EnemyController : MonoBehaviour
 	public Transform Player;
 	public float Max;
 	public float MoveSpeed;
+	// public GameObject self;
 
 
 	//Shooting variables
@@ -20,42 +20,33 @@ public class EnemyController : MonoBehaviour
 	private AudioSource audioSource;
 	private float dist;
 	private float nextFire;
-	private float Min = 0;
 	private int update;
-	private int randomBuild;
-	private CharacterStats stats;
-
-	//Health, armor
-	private int[,] enemyStats = new int [,] { {10,0}, {14,0}, {6,0} };
-
-	//Speed, fireRate, Max
-	private float[,] movement = new float[,] { {12f,1f,40f}, {8f,2f,60f}, {16f,0.5f,30f} };
+	private EnemyStats enemyStats;
+	public Image enemyHealthBar;
 
 	void Start()
 	{
-		stats = GetComponent<CharacterStats> ();
+		enemyStats = GetComponent<EnemyStats>();
+		fireRate = enemyStats.fireRate.getValue();
+		MoveSpeed = enemyStats.speed.getValue();
+		Max = enemyStats.engageRange.getValue();
+		InvokeRepeating("Update", 1, 1);
 
-		//Debug.Log (enemyStats.Length);
-
-		//Get random build type
-		randomBuild = UnityEngine.Random.Range (0, 3);
-
-		//Assign stats based off of build
-		Debug.Log(enemyStats[randomBuild,0]);
-		stats.SetHealth(enemyStats[randomBuild, 0] - 10);
-		stats.armor.addModifier(enemyStats[randomBuild, 1]);
-		MoveSpeed = movement [randomBuild, 0];
-		fireRate = movement [randomBuild, 1];
-		Max = movement [randomBuild, 2];
+		enemyHealthBar.fillAmount = (float)(GetComponent<EnemyStats>().currentHealth)/((float)(GetComponent<EnemyStats>().maxHealth.getValue()));
 	}
 
 	void Update()
 	{
-		
+<<<<<<< HEAD
+
+=======
+>>>>>>> 40d57c52fda15a54548dedea81d8f8f860c88e1c
 		//Distance from player
 		dist = Vector3.Distance(Player.position, transform.position);
 		// Debug.Log (dist);
 		float smooth = 1.0f;
+
+		enemyHealthBar.fillAmount = (float)(GetComponent<CharacterStats> ().currentHealth) / (float)(GetComponent<CharacterStats> ().maxHealth.getValue());
 
 		if(dist <= Max)
 		{
@@ -80,7 +71,7 @@ public class EnemyController : MonoBehaviour
 
 			transform.position += transform.forward*MoveSpeed*Time.deltaTime;
 
-			if (Time.time > nextFire) 
+			if (Time.time > nextFire)
 			{
 				transform.LookAt(Player);
 
