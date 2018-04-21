@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CloseUI : MonoBehaviour {
+	public GameObject storeParent;
 
-	public void closeClick()
+	public void Update()
     {
-        GameObject storeParent = GameObject.Find("StoreUI");
         GameObject storeUI = storeParent.transform.Find("Panel").gameObject;
-        storeUI.SetActive(false);
+        if(Input.GetKeyDown(KeyCode.T))
+        {
+            storeUI.SetActive(false);
+        }
     }
 }
