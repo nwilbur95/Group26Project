@@ -44,13 +44,15 @@ public class Destroy_By_COntact : MonoBehaviour {
  
             if(self.tag == "Player")
             {
-                if (health < 0)    //object dead
+                if (health <= 0)    //object dead
                 {
                     gameObject.SetActive(false);
+					playerHealth.text = "Health: 0";
                 }
-                playerHealth.text = "Health: " + health.ToString(); 
+				else
+                	playerHealth.text = "Health: " + health.ToString(); 
             }
-            else if (health < 0)    //object dead
+            else if (health <= 0)    //object dead
             {
                 Destroy(gameObject);
             }
@@ -67,13 +69,13 @@ public class Destroy_By_COntact : MonoBehaviour {
             //update health UI (make sure UI attached to player ship health variable)
             if(self.tag == "Player")
             {   
-                if (health < 0)    //object dead
+                if (health <= 0)    //object dead
                 {
                     gameObject.SetActive(false);
                 }
                 playerHealth.text = "Health: " + health.ToString(); 
             }
-            else if (health < 0)    //object dead
+            else if (health <= 0)    //object dead
             {
                 Destroy(gameObject);
 
@@ -112,7 +114,7 @@ public class Destroy_By_COntact : MonoBehaviour {
             health = myStats.currentHealth;
             // Debug.Log(self.tag + " Collided with Player.");
 
-            if (health < 0)    //object dead
+            if (health <= 0)    //object dead
             {
 				gameObject.SetActive(false);
             }
@@ -128,13 +130,13 @@ public class Destroy_By_COntact : MonoBehaviour {
 
             if(self.tag == "Player")
             {
-                if (health < 0)    //object dead
+                if (health <= 0)    //object dead
                 {
                     gameObject.SetActive(false);
                 }
                 playerHealth.text = "Health: " + health.ToString(); 
             }
-            else if (health < 0)    //object dead
+            else if (health <= 0)    //object dead
             {
                 Destroy(gameObject);
             }

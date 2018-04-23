@@ -19,8 +19,9 @@ public class End_Menu : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		if (!player.activeSelf)
+		if (!player.activeSelf) {
 			Die ();
+		}
 	}
 
 	public void Restart()

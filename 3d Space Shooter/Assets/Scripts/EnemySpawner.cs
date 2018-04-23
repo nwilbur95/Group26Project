@@ -20,7 +20,7 @@ public class EnemySpawner : MonoBehaviour {
 	{
 		activeEnemies = 0;
 		enemiesKilled = 0;
-		maxEnemies = 3;
+		maxEnemies = 18;
 
 		spawnPoints = GetComponentsInChildren<Transform> ();
 
@@ -56,7 +56,7 @@ public class EnemySpawner : MonoBehaviour {
 			spawnShip ();
 
 		if (addEnemies) {
-			maxEnemies++;
+			maxEnemies+=6;
 			addEnemies = false;
 			Debug.Log ("Increased enemies");
 		}
