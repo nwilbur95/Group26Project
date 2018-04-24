@@ -69,11 +69,13 @@ public class Destroy_By_COntact : MonoBehaviour {
             //update health UI (make sure UI attached to player ship health variable)
             if(self.tag == "Player")
             {   
-                if (health <= 0)    //object dead
-                {
-                    gameObject.SetActive(false);
-                }
-                playerHealth.text = "Health: " + health.ToString(); 
+				if (health <= 0)    //object dead
+				{
+					gameObject.SetActive(false);
+					playerHealth.text = "Health: 0";
+				}
+				else
+					playerHealth.text = "Health: " + health.ToString(); 
             }
             else if (health <= 0)    //object dead
             {
@@ -130,11 +132,13 @@ public class Destroy_By_COntact : MonoBehaviour {
 
             if(self.tag == "Player")
             {
-                if (health <= 0)    //object dead
-                {
-                    gameObject.SetActive(false);
-                }
-                playerHealth.text = "Health: " + health.ToString(); 
+				if (health <= 0)    //object dead
+				{
+					gameObject.SetActive(false);
+					playerHealth.text = "Health: 0";
+				}
+				else
+					playerHealth.text = "Health: " + health.ToString(); 
             }
             else if (health <= 0)    //object dead
             {
