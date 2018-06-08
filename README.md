@@ -11,7 +11,7 @@ In order to test this game, you will need a Windows machine. Although this game 
 To get this demo onto your machine, first clone the branch titled "demo".
 
 ```
-git clone -b demo https://github.com/nwilbur95/Group26Project
+git clone -b demo https://github.com/nwilbur95/Group26Project.git
 ```
 Once you have cloned the repo, navigate to the "Demo" folder in the project directory.
 
